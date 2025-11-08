@@ -77,6 +77,7 @@ extern uint8_t ds3231_day;
 extern uint8_t ds3231_month;
 extern uint8_t ds3231_year;
 
+/* ============ Lab 4 (start) ============ */
 static void read_ds3231_into_cur(void){
   ds3231_ReadTime();
   cur.hour  = ds3231_hours;
@@ -87,6 +88,7 @@ static void read_ds3231_into_cur(void){
   cur.month = ds3231_month;
   cur.year  = ds3231_year;
 }
+/* ============ Lab 4 (end) ============ */
 
 static void snapshot_from_cur(void){ edit = cur; }
 
@@ -191,7 +193,7 @@ void app_clock_init(void){
 
   lcd_Clear(BLACK);
 }
-
+/* ============ Lab 4 (start) ============ */
 void app_clock_on_tick(void){
   /* 1) Blink & hold/repeat */
   blink_acc_ms += APP_TICK_MS;
@@ -301,3 +303,4 @@ void app_clock_on_tick(void){
   draw_date_area(&cur);
   draw_alarm_effect();
 }
+/* ============ Lab 4 (end) ============ */
